@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Raleway:wght@100;200;300;400;500;600;700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
+
+:root {
+    --primary: #eebf00;
+    --secondary: #232b38;
+    --ternary: #6c6c6c;
+    --danger: #fe4545;
+    --pure: #fefefe;
+    --light: #f0f0f0;
+    --heaven: #ffffff;
+    --footer: #2d333f;
+    --radius: 0.5rem;
+    --transition: all 0.3s linear;
+    --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--secondary);
+    font-family: "Poppins", sans-serif;
+
+    letter-spacing: 2px;
+    color: var(--pure) !important;
+    font-size: 0.85rem;
+}
+.justify-space-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+footer {
+    background-color: var(--footer);
+    height: 100px;
+}
