@@ -13,7 +13,7 @@
     --footer: #2d333f;
     --radius: 0.5rem;
     --transition: all 0.3s linear;
-    --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --light-shadow: 0 5px 15px rgba(233, 233, 233, 0.1);
     --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
@@ -24,7 +24,7 @@
 }
 
 body {
-    background-color: var(--secondary);
+    background-color: var(--footer);
     font-family: "Poppins", sans-serif;
 
     letter-spacing: 2px;
@@ -36,7 +36,14 @@ body {
     justify-content: space-between;
 }
 
+.bg-clr {
+    background-color: var(--secondary);
+}
 footer {
-    background-color: var(--footer);
+    background-color: var(--secondary);
     height: 100px;
+}
+
+.light-shadow {
+    box-shadow: var(--dark-shadow);
 }
