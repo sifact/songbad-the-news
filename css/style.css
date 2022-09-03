@@ -39,6 +39,9 @@ body {
 .bg-clr {
     background-color: var(--secondary);
 }
+/* .bg-clr2 {
+    background-color: var(--footer);
+} */
 footer {
     background-color: var(--secondary);
     height: 100px;
