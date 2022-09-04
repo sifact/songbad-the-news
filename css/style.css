@@ -86,3 +86,12 @@ main {
         margin: 0 !important;
     }
 }
+
+header a {
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+.high:hover {
+    color: #eebf00;
+    border-bottom: 2px solid var(--primary);
+}
