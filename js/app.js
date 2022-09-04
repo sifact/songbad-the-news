@@ -15,8 +15,10 @@ const displayCategory = (newses) => {
 
     newses.forEach((news) => {
         const newsDiv = document.createElement("div");
+
         newsDiv.innerHTML = `
-		<a onclick="loadCategoryNews(${news.category_id}, '${news.category_name}')" class="nav-link text-white" style="cursor:pointer">${news.category_name}</a>
+		
+		<a onclick="loadCategoryNews(${news.category_id}, '${news.category_name}')" class="nav-link text-white special high" style="cursor:pointer" >${news.category_name}</a>
 		`;
         newsContainer.appendChild(newsDiv);
     });
@@ -30,11 +32,7 @@ const loadCategoryNews = (id, categoryName) => {
     }`;
     fetch(url)
         .then((res) => res.json())
-        .then((data) =>
-            displayCategoryNews(data.data, categoryName).catch((error) =>
-                console.log(error)
-            )
-        );
+        .then((data) => displayCategoryNews(data.data, categoryName));
 };
 
 const displayCategoryNews = (profiles, categoryName) => {
