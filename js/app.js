@@ -1,9 +1,13 @@
 const loadCategory = async () => {
     const url = `https://openapi.programming-hero.com/api/news/categories`;
-    const res = await fetch(url);
-    const data = await res.json();
+    try {
+        const res = await fetch(url);
+        const data = await res.json();
 
-    displayCategory(data.data.news_category);
+        displayCategory(data.data.news_category);
+    } catch (error) {
+        console.log(error);
+    }
 };
 
 const displayCategory = (newses) => {
@@ -26,7 +30,11 @@ const loadCategoryNews = (id, categoryName) => {
     }`;
     fetch(url)
         .then((res) => res.json())
-        .then((data) => displayCategoryNews(data.data, categoryName));
+        .then((data) =>
+            displayCategoryNews(data.data, categoryName).catch((error) =>
+                console.log(error)
+            )
+        );
 };
 
 const displayCategoryNews = (profiles, categoryName) => {
@@ -125,9 +133,13 @@ const toggleSpinner = (isLoading) => {
 };
 const loadNewsDetails = async (id) => {
     const url = `https://openapi.programming-hero.com/api/news/${id}`;
-    const res = await fetch(url);
-    const data = await res.json();
-    displayNewsDitails(data.data);
+    try {
+        const res = await fetch(url);
+        const data = await res.json();
+        displayNewsDitails(data.data);
+    } catch (err) {
+        console.log(err);
+    }
 };
 
 const displayNewsDitails = (newses) => {
