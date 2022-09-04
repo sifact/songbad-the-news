@@ -53,27 +53,39 @@ const displayCategoryNews = (profiles, categoryName) => {
             profile._id
         }')" data-bs-toggle="modal" data-bs-target="#exampleModal" class="row g-0">
 		<div class="col-md-3 p-3">
-		  <img src="${profile.thumbnail_url}" class="img-fluid rounded-start" alt="...">
+		  <img src="${
+              profile.thumbnail_url ? profile.thumbnail_url : `no data found`
+          }" class="img-fluid rounded-start" alt="...">
 		</div>
 		<div class="col-md-9">
 		  <div class="card-body">
-			<h5 class="card-title">${profile.title}</h5>
-			<p class="card-text mt-3">${profile.details.slice(0, 500)} ...</p>
+			<h5 class="card-title">${profile.title ? profile.title : `no data found`}</h5>
+			<p class="card-text mt-3">${
+                profile.details
+                    ? profile.details.slice(0, 500)
+                    : `no data found`
+            } ...</p>
 			<div class="d-flex justify-content-between mt-3">
 			<div class="d-flex">
 			<img src="${
-                profile.author.img
+                profile.author.img ? profile.author.img : `no data found`
             }" class="img-fluid rounded-circle" alt="..." style="width: 50px">
 			<div class="d-flex flex-column ms-3 justify-content-center">
-				<span><small >${profile.author.name}</small></span>
+				<span><small >${
+                    profile.author.name ? profile.author.name : `no data found`
+                }</small></span>
 
-				<span><small >${profile.author.published_date}</small></span>
+				<span><small >${
+                    profile.author.published_date
+                        ? profile.author.published_date
+                        : `no data found`
+                }</small></span>
 			</div>
 			</div>
 			
 			<div class="d-flex justify-content-center align-items-center">
 			<i class='bx bxs-video me-2'></i>
-			<span>${profile.total_view}</span>
+			<span>${profile.total_view ? profile.total_view : `no data found`}</span>
 			</div>
 			<div class="d-flex justify-content-center align-items-center">
 			<a><i class='bx bx-right-arrow-alt fs-4'></i></a>
@@ -118,22 +130,61 @@ const displayNewsDitails = (newses) => {
     newses.forEach((news) => {
         const modalDiv = document.createElement("div");
         modalDiv.classList.add("modal-content", "bg-clr");
-        console.log(modalDiv);
+
         modalDiv.innerHTML = `
 		
-		
-		<div class="card bg-clr">
-		<img src="${news.image_url}" class="card-img-top" alt="...">
-		<div class="card-body">
-		  <h5 class="card-title">Card title</h5>
-		  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-		  <a href="#" class="btn btn-primary">Go somewhere</a>
-		</div>
 		<div class="modal-header border-0">
-		  
-		<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-	  </div>
+        <h5 class="modal-title" id="exampleModalLabel"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+	  <div class="row g-0">
+	<div class="col-md-3 p-3">
+	  <img src="${
+          news.thumbnail_url ? news.thumbnail_url : `no data found`
+      }" class="img-fluid rounded-start" alt="...">
+	</div>
+	<div class="col-md-9">
+	  <div class="card-body">
+		<h5 class="card-title">${news.title ? news.title : `no data found`}</h5>
+		<p class="card-text mt-3">${
+            news.details ? news.details : `no data found`
+        } ...</p>
+		<div class="d-flex justify-content-between mt-3">
+		<div class="d-flex">
+		<img src="${
+            news.author.img ? news.author.img : `no data found`
+        }" class="img-fluid rounded-circle" alt="..." style="width: 50px">
+		<div class="d-flex flex-column ms-3 justify-content-center">
+			<span><small >${
+                news.author.name ? news.author.name : `no data found`
+            }</small></span>
+
+			<span><small >${
+                news.author.published_date
+                    ? news.author.published_date
+                    : `no data found`
+            }</small></span>
 		</div>
+		</div>
+		
+		<div class="d-flex justify-content-center align-items-center">
+		<i class='bx bxs-video me-2'></i>
+		<span>${news.total_view ? news.total_view : `no data found`}</span>
+		</div>
+		
+		</div>
+		
+		
+	  </div>
+	</div>
+	
+	
+  </div>
+      </div>
+      <div class="modal-footer border-0">
+        
+      </div>
 		
 		
 		`;

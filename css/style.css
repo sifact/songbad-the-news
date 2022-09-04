@@ -30,6 +30,7 @@ body {
     letter-spacing: 2px;
     color: var(--pure) !important;
     font-size: 0.85rem;
+    overflow-x: hidden !important;
 }
 .justify-space-between {
     display: flex;
