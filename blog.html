@@ -41,7 +41,7 @@
 						  aria-controls="collapseOne"
 						  style="background-color: var(--secondary); color: white"
 						>
-						  What are the differences between flexbox and grid?
+						  What are the differences between var, let and const?
 						</button>
 					  </h2>
 					  <div
@@ -52,13 +52,9 @@
 					  >
 						<div class="accordion-body bg-clr">
 						  <p class="text-white">
-							Flexbox is designed for one-dimensional layouts, and Grid for
-							two-dimensional layouts. The approach of CSS Grid is the
-							layout first, while the Flexbox approach is primarily the
-							content. The Flexbox layout is best suited to application
-							components and small-scale layouts, while the Grid layout is
-							designed for larger-scale layouts that are not linear in
-							design.
+							In the early days of JavaScript, there was only one way to declare variables and that was using the var keyword. However, there were some issues associated with variables declared using the var keyword so it was necessary to evolve new ways for variable declaration. With the advent of ES6, now developers are able to define variables according to their specific needs, thanks to two new keywords: let and const.
+
+All three of these three keywords have similarities in their syntax for declaring variables. However, they differ in their usage and scope.
 						  </p>
 						</div>
 					  </div>
@@ -74,7 +70,7 @@
 						  aria-controls="collapseTwo"
 						  style="background-color: var(--secondary); color: white"
 						>
-						  What are the differences between Bootstrap and Tailwind?
+						  Why do we use template string in js?
 						</button>
 					  </h2>
 					  <div
@@ -85,15 +81,16 @@
 					  >
 						<div class="accordion-body bg-clr">
 						  <p class="text-white">
-							The significant difference between Tailwind CSS and Bootstrap
-							is that Tailwind offers predesigned widgets to build a site
-							from scratch with fast UI development, while Bootstrap comes
-							with a set of pre-styled responsive, mobile-first components
-							that possess a definite UI kit. The main issue with Bootstrap
-							is that developers have to rely merely on specific abstracted
-							patterns. It compels to override the framework with custom CSS
-							that utterly defeats the purpose of using a framework in the
-							first place.
+							Before ES6, wi use single quotes (') or double quotes (") to wrap a string literal. And the strings have very limited functionality.
+
+To enable us to solve more complex problems, ES6 template literals provide the syntax that allows us to work with strings more safely and cleanly.
+
+In ES6, we create a template literal by wrapping our text in backticks (`).
+
+
+A multiline string: a string that can span multiple lines.
+String formatting: the ability to substitute part of the string for the values of variables or expressions. This feature is also called string interpolation.
+HTML escaping: the ability to transform a string so that it is safe to include in HTML.
 						  </p>
 						</div>
 					  </div>
@@ -109,7 +106,7 @@
 						  aria-controls="collapseThree"
 						  style="background-color: var(--secondary); color: white"
 						>
-						  What is CSS box model?
+						  What are the differences between arrow function and regular function?
 						</button>
 					  </h2>
 					  <div
@@ -120,45 +117,22 @@
 					  >
 						<div class="accordion-body bg-clr">
 						  <p class="text-white">
-							In CSS, the term "box model" is used when talking about design
-							and layout. The CSS box model is essentially a box that wraps
-							around every HTML element. It consists of: margins, borders,
-							padding, and the actual content.
+							Inside of a regular JavaScript function, this value (aka the execution context) is dynamic.
+
+The dynamic context means that the value of this depends on how the function is invoked. In JavaScript, there are 4 ways you can invoke a regular function.
+
+The behavior of this inside of an arrow function differs considerably from the regular function's this behavior. The arrow function doesn't define its own execution context.
+
+As seen in the previous section, the regular function can easily construct objects.
+A consequence of this resolved lexically is that an arrow function cannot be used as a constructor.
+
+Inside the body of a regular function, arguments is a special array-like object containing the list of arguments with which the function has been invoked.
+On the other side, no arguments special keyword is defined inside an arrow function.
 						  </p>
 						</div>
 					  </div>
 					</div>
-					<div class="accordion-item my-3 border-0">
-					  <h2 class="accordion-header" id="headingFour">
-						<button
-						  class="accordion-button collapsed"
-						  type="button"
-						  data-bs-toggle="collapse"
-						  data-bs-target="#collapseFour"
-						  aria-expanded="false"
-						  aria-controls="collapseFour"
-						  style="background-color: var(--secondary); color: white"
-						>
-						  What is HTML semantic tag?
-						</button>
-					  </h2>
-					  <div
-						id="collapseFour"
-						class="accordion-collapse collapse"
-						aria-labelledby="headingFour"
-						data-bs-parent="#accordionExample"
-					  >
-						<div class="accordion-body bg-clr">
-						  <p class="text-white">
-							A semantic element clearly describes its meaning to both the
-							browser and the developer. Examples of non-semantic elements:
-							"div" and "span" - Tells nothing about its content. Examples
-							of semantic elements: "form", "table", and "article", "p"
-							Clearly defines its content.
-						  </p>
-						</div>
-					  </div>
-					</div>
+					
 				  </div>
 				</div>
 			  </section>
@@ -166,7 +140,7 @@
 		
 		<footer class="d-flex align-items-center justify-content-center">
 			
-				<p>Copyright@2022 Songbad the News</p>
+				<span>Copyright@2022 Songbad the News</span>
 		
 
 		</footer>

@@ -12,7 +12,7 @@
 	</head>
     <body>
 		<header class="container mb-5">
-			<section class="topbar my-5 d-flex justify-content-between">
+			<section class="topbar my-5 d-flex justify-content-between top-nav">
 				<h4> <span class="text-warning">Songbad</span> the News</h4>
 				<div class="d-flex align-items-center fs-5">
 					<a class="nav-link text-white me-5" href="index.html">News</a>
@@ -45,22 +45,24 @@
 
 
 				</div>
-				<div class="d-flex justify-content-between my-4">
+				<div class="d-flex justify-content-between flex-column flex-lg-row my-4 wrapper">
 
 					
-					<div class="input-group w-25">
-						<span class="fs-5">Sort By View: </span> 
-						<select class="form-select ms-3 bg-clr border-0 text-white rounded" id="inputGroupSelect01">
-						  
-						  <option value="1">Default</option>
-						  <option value="2">Sort</option>
-						  
-						</select>
-					  </div>
-					  <div>
-						<button class="btn btn-warning me-3">Trending</button>
-						<button class="btn btn-outline-warning">Today's pick</button>
-					  </div>
+						<div class="input-group w-25">
+							<span class="fs-5">Sort By View: </span> 
+							<select class="form-select ms-3 bg-clr border-0 text-white rounded" id="inputGroupSelect01">
+							  
+								<option id="sort" value="1">sort</option>
+							  <option value="2">default</option>
+							  
+							</select>
+						  </div>
+						  <div class= "button-two">
+							<button class="btn btn-warning me-3">Trending</button>
+							<button class="btn btn-outline-warning">Today's pick</button>
+						  </div>
+					
+					
 				</div>
 			</section>
 			<section id="cards-container">
@@ -93,7 +95,7 @@
 		
 		<footer class="d-flex align-items-center justify-content-center mt-5">
 			
-				<p>Copyright@2022 Songbad the News</p>
+				<span>Copyright@2022 Songbad the News</span>
 		
 
 		</footer>

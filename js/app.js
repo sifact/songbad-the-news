@@ -43,9 +43,17 @@ const displayCategoryNews = (profiles, categoryName) => {
         textTag.innerText = `${profiles.length} items found in category ${categoryName}`;
     }
     textContainer.appendChild(textTag);
+    // sort according to number of view
+
+    profiles.sort(function (a, b) {
+        return b.total_view - a.total_view;
+    });
+
+    // sortData(profiles);
     profiles.forEach((profile) => {
         // create cards
         const profileDiv = document.createElement("div");
+
         profileDiv.classList.add("card", "mb-3", "bg-clr", "light-shadow");
 
         profileDiv.innerHTML = `
@@ -88,7 +96,7 @@ const displayCategoryNews = (profiles, categoryName) => {
 			<span>${profile.total_view ? profile.total_view : `no data found`}</span>
 			</div>
 			<div class="d-flex justify-content-center align-items-center">
-			<a><i class='bx bx-right-arrow-alt fs-4'></i></a>
+			<a style="cursor:pointer;"><i class='bx bx-right-arrow-alt fs-4'></i></a>
 			</div>
 			</div>
 			

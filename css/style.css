@@ -55,3 +55,34 @@ footer {
 main {
     min-height: calc(100vh - 403px);
 }
+@media (max-width: 576px) {
+    main .button-two {
+        display: flex;
+        flex-direction: column;
+    }
+    main .button-two button {
+        margin-top: 1rem;
+        width: 60%;
+    }
+    main .wrapper {
+        justify-content: center;
+    }
+
+    main .input-group {
+        width: 100% !important;
+        flex-direction: column;
+    }
+    main select {
+        width: 50% !important;
+    }
+    header section.top-nav {
+        flex-direction: column;
+    }
+    header section div {
+        flex-direction: column;
+        justify-content: left;
+    }
+    header section div a {
+        margin: 0 !important;
+    }
+}
