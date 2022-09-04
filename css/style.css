@@ -39,9 +39,9 @@ body {
 .bg-clr {
     background-color: var(--secondary);
 }
-/* .bg-clr2 {
-    background-color: var(--footer);
-} */
+.bg-clr2 {
+    background-color: var(--ternary);
+}
 footer {
     background-color: var(--secondary);
     height: 100px;
@@ -49,4 +49,8 @@ footer {
 
 .light-shadow {
     box-shadow: var(--dark-shadow);
+}
+
+main {
+    min-height: calc(100vh - 403px);
 }

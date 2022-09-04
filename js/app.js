@@ -12,25 +12,39 @@ const displayCategory = (newses) => {
     newses.forEach((news) => {
         const newsDiv = document.createElement("div");
         newsDiv.innerHTML = `
-		<a onclick="loadCategoryNews(${news.category_id})" class="nav-link text-white" style="cursor:pointer">${news.category_name}</a>
+		<a onclick="loadCategoryNews(${news.category_id}, '${news.category_name}')" class="nav-link text-white" style="cursor:pointer">${news.category_name}</a>
 		`;
         newsContainer.appendChild(newsDiv);
     });
 };
 
-const loadCategoryNews = (id) => {
+const loadCategoryNews = (id, categoryName) => {
+    // start spinner
+    toggleSpinner(true);
     const url = `https://openapi.programming-hero.com/api/news/category/${
         "0" + id
     }`;
     fetch(url)
         .then((res) => res.json())
-        .then((data) => displayCategoryNews(data.data));
+        .then((data) => displayCategoryNews(data.data, categoryName));
 };
 
-const displayCategoryNews = (profiles) => {
+const displayCategoryNews = (profiles, categoryName) => {
     const profilesContainer = document.getElementById("cards-container");
     profilesContainer.innerHTML = ``;
+
+    // display number of cards
+    const textContainer = document.getElementById("card-numbers");
+    textContainer.innerText = ``;
+    const textTag = document.createElement("h5");
+    if (profiles.length === 0) {
+        textTag.innerText = `No data found in category ${categoryName}`;
+    } else {
+        textTag.innerText = `${profiles.length} items found in category ${categoryName}`;
+    }
+    textContainer.appendChild(textTag);
     profiles.forEach((profile) => {
+        // create cards
         const profileDiv = document.createElement("div");
         profileDiv.classList.add("card", "mb-3", "bg-clr", "light-shadow");
 
@@ -75,8 +89,20 @@ const displayCategoryNews = (profiles) => {
 		`;
         profilesContainer.appendChild(profileDiv);
     });
+
+    // end spinner
+    toggleSpinner(false);
 };
 
+// toggle spinner
+const toggleSpinner = (isLoading) => {
+    const loaderSection = document.getElementById("loader");
+    if (isLoading) {
+        loaderSection.classList.remove("d-none");
+    } else {
+        loaderSection.classList.add("d-none");
+    }
+};
 const loadNewsDetails = async (id) => {
     const url = `https://openapi.programming-hero.com/api/news/${id}`;
     const res = await fetch(url);
@@ -114,4 +140,5 @@ const displayNewsDitails = (newses) => {
         modalContainer.appendChild(modalDiv);
     });
 };
+
 loadCategory();

@@ -40,10 +40,42 @@
 		</header>
 
 		<main class="container">
-			<section id="cards-container">
+			<section class="mb-5">
+				<div class="d-flex align-items-center justify-content-center bg-clr rounded border-top border-2 border-warning" style="height: 100px;" id="card-numbers">
 
+
+				</div>
+				<div class="d-flex justify-content-between my-4">
+
+					
+					<div class="input-group w-25">
+						<span class="fs-5">Sort By View: </span> 
+						<select class="form-select ms-3 bg-clr border-0 text-white rounded" id="inputGroupSelect01">
+						  
+						  <option value="1">Default</option>
+						  <option value="2">Sort</option>
+						  
+						</select>
+					  </div>
+					  <div>
+						<button class="btn btn-warning me-3">Trending</button>
+						<button class="btn btn-outline-warning">Today's pick</button>
+					  </div>
+				</div>
+			</section>
+			<section id="cards-container">
+				
 			</section>
 			
+			<!-- start loader -->
+			<section>
+
+				<div id="loader" class="d-none d-flex justify-content-center aling-items-center text-warning">
+					<div class="spinner-border" role="status">
+					  <span class="visually-hidden">Loading...</span>
+					</div>
+				  </div>
+			</section>
 			<section >
 				<!-- Button trigger modal -->
 
@@ -59,7 +91,7 @@
 			  
 		</main>
 		
-		<footer class="d-flex align-items-center justify-content-center">
+		<footer class="d-flex align-items-center justify-content-center mt-5">
 			
 				<p>Copyright@2022 Songbad the News</p>
 		
